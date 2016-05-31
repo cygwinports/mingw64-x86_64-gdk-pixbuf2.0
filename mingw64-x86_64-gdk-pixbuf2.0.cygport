@@ -3,7 +3,7 @@ ORIG_PN="gdk-pixbuf"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gdk-pixbuf2.0"
-VERSION=2.32.2
+VERSION=2.32.3
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME image format library for Win64 toolchain"
@@ -14,6 +14,7 @@ mingw64-x86_64-gcc cross compiler, and installs into the
 HOMEPAGE="http://www.gtk.org/"
 
 CYGCONF_ARGS="
+	--enable-relocations
 	--with-included-loaders=png
 	--without-gdiplus
 	--with-libjasper
