@@ -1,0 +1,12 @@
+--- origsrc/gdk-pixbuf-2.36.5/Makefile.am	2017-02-13 09:58:32.000000000 -0600
++++ src/gdk-pixbuf-2.36.5/Makefile.am	2017-03-08 02:41:13.623377600 -0600
+@@ -1,4 +1,8 @@
+-SUBDIRS = gdk-pixbuf po docs thumbnailer tests contrib win32
++SUBDIRS = gdk-pixbuf po docs tests contrib win32
++
++if !OS_WIN32
++SUBDIRS += thumbnailer
++endif
+ 
+ EXTRA_DIST = 			\
+ 	config.h.win32 		\
