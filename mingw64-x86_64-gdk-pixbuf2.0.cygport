@@ -3,7 +3,7 @@ ORIG_PN="gdk-pixbuf"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gdk-pixbuf2.0"
-VERSION=2.36.5
+VERSION=2.36.6
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME image format library for Win64 toolchain"
