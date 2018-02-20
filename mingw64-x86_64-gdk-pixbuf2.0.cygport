@@ -3,7 +3,7 @@ ORIG_PN="gdk-pixbuf"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gdk-pixbuf2.0"
-VERSION=2.36.9
+VERSION=2.36.11
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME image format library for Win64 toolchain"
@@ -27,6 +27,11 @@ src_install() {
 	cyginstall
 
 	touch ${D}${CROSS_LIBDIR}/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+	dodir /etc/postinstall
+	cat > ${D}/etc/postinstall/${NAME}.sh <<_EOF
+${CROSS_BINDIR}/gdk-pixbuf-query-loaders --update-cache
+_EOF
 
 	rm -f ${D}${CROSS_BINDIR}/gdk-pixbuf-{csource,pixdata}*
 	rm -fr ${D}${CROSS_DATADIR}/man/
